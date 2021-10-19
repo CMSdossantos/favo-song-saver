@@ -1,7 +1,7 @@
-import './App.css';
 import React, {Component} from 'react';
 import Header from "./components/Header.js";
 import List from "./components/List"
+
 
 class App extends Component {
   constructor(){
@@ -10,7 +10,8 @@ class App extends Component {
                  artist: "",
                  inputGenre: "",
                  inputRating: "",
-                 list: [{ key: 1, title: "hey ya", artist: "whitney"}, {key: 2, title: "ms jackson", artist: "whitney"}],
+                 list: [{ key: 1, title: "hey ya", artist: "whitney", inputGenre: "Rock",inputRating: "3"},
+                  {key: 2, title: "ms jackson", artist: "whitney", inputGenre: "R&B",inputRating: "4"}]
                 }
     this.handleChange = this.handleChange.bind(this)
     this.addSong = this.addSong.bind(this)
@@ -34,7 +35,9 @@ class App extends Component {
     tempList.push(
       { key: getUniqKey(),
         title: this.state.title,
-        artist: this.state.artist
+        artist: this.state.artist,
+        inputGenre: this.state.inputGenre,
+        inputRating: this.state.inputRating,
       })
 
     this.setState({list: tempList})
@@ -47,7 +50,7 @@ class App extends Component {
   //dadelijk editen
   render(){
       return (
-        <div className="App">
+        <div className="app">
           <Header state={this.state} handle={this.handleChange} addSong={this.addSong} />
           <List data={this.state}  />
         </div>

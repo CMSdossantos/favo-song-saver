@@ -1,15 +1,13 @@
 import React from "react";
+import './App.css';
 
 const List = (props) => {
   
-  const displayItems = props.data.list.map(el => <li key={el.key}> {el.title} - {el.artist}</li>)
+  const displayItems = props.data.list.map(el => <li className="flexline" key={el.key}> {el.title} - {el.artist} 
+  <span> Genre: {el.inputGenre} - Rating:{el.inputRating}</span>
+  </li>)
   
-  // const displayItems = Array.from(props.data.list.map(el => <li key={el.key}> {el.title} {el.artist}</li>))
-  
-  
-    
-
-    return <ul style={{listStyleType: "none"}}>
+    return <ul className="containerflex">
             {displayItems}
           </ul>
 }

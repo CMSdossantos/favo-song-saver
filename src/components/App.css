@@ -1,0 +1,31 @@
+body{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: solid blue 1px;
+}
+
+/* .app{
+  border: solid purple px;
+   
+} */
+
+.containerflex {
+  list-style-type: none;
+  align-self: center;
+  border: solid yellow 1px;
+  margin: 0;
+  padding-left: 0;
+  
+}
+
+.flexline {
+  margin: 8px;
+  font-size: 1rem;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-weight: 600;
+}
+
+span{
+  float: right;
+}
