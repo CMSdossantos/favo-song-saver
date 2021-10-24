@@ -7,23 +7,25 @@ class App extends Component {
   constructor(){
     super()
     this.state = { title: "",
-                 artist: "",
-                 inputGenre: "",
-                 inputRating: "",
-                 list: [{ key: 1, title: "hey ya", artist: "whitney", inputGenre: "Rock",inputRating: "3"},
-                  {key: 2, title: "ms jackson", artist: "whitney", inputGenre: "R&B",inputRating: "4"}]
-                }
+    artist: "",
+    inputGenre: "",
+    inputRating: "",
+    list: [{ key: 1, title: "hey ya", artist: "whitney", inputGenre: "Rock",inputRating: "3"},
+    {key: 2, title: "ms jackson", artist: "whitney", inputGenre: "R&B",inputRating: "4"}]
+  }
+    
     this.handleChange = this.handleChange.bind(this)
     this.addSong = this.addSong.bind(this)
+    this.deleteSong = this.deleteSong.bind(this)
+    
   }
   
-
   handleChange(event) {
     const {name,value} = event.target
     this.setState({ [name] : value})
   }
 
-  addSong(){
+addSong(){
     const tempList = this.state.list;
     const getIDs = tempList.map((ele) => ele.key )
     const getUniqKey = () => {
@@ -41,18 +43,23 @@ class App extends Component {
       })
 
     this.setState({list: tempList})
+  }
 
-    console.log(getUniqKey());
+deleteSong(id){
+    const tempList2 = this.state.list;
+    const decreasedList = tempList2.filter((ele) => ele.key !== id)
+    
+    this.setState({list: decreasedList})
   }
 
   
 
-  //dadelijk editen
   render(){
       return (
         <div className="app">
           <Header state={this.state} handle={this.handleChange} addSong={this.addSong} />
-          <List data={this.state}  />
+          <List data={this.state} deleteSong={this.deleteSong}  />
+          
         </div>
       )
   }
