@@ -18,11 +18,8 @@ const Header = (props) => {
                 <option value="3"> 3</option>
             </select>
             <button type="button" onClick={() => props.addSong()} >Add Song</button>
-            <select name="categorie" >
-                <option value="all">categorie:</option>
-                <option value="rating"></option>
-            </select>
-            <button onClick={() => console.log("filter geklikt")} >Filter</button>
+            
+            <button type="button" onClick={() => props.filterSong()} >Filter</button>
             
         </div>
     )
