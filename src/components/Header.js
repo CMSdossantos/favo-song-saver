@@ -9,7 +9,7 @@ const Header = (props) => {
             <select name="inputGenre" onChange={(e)=>props.handle(e)}>
                 <option value="onbekend"> Genre</option>
                 <option value="Rock"> Rocku</option>
-                <option value="Rythem and Blues"> RnB</option>
+                <option value="RnB"> RnB</option>
             </select>
             <select name="inputRating" onChange={(e)=>props.handle(e)}> 
                 <option value="-"> Rating</option>
@@ -18,8 +18,7 @@ const Header = (props) => {
                 <option value="3"> 3</option>
             </select>
             <button type="button" onClick={() => props.addSong()} >Add Song</button>
-            
-            <button type="button" onClick={() => props.filterSong()} >Filter</button>
+            <button type="button" onClick={(e) => props.filterSong(e)} >Filter</button>
             
         </div>
     )

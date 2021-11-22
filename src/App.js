@@ -10,10 +10,12 @@ class App extends Component {
     artist: "",
     inputGenre: "",
     inputRating: "",
+    filterGenre: "",
+    filterRating: "",
     list: [{ key: 1, title: "hey ya", artist: "whitney", inputGenre: "Rock",inputRating: "3"},
-    {key: 2, title: "ms jackson", artist: "whitney", inputGenre: "R&B",inputRating: "4"}],
+    {key: 2, title: "ms jackson", artist: "whitney", inputGenre: "RnB",inputRating: "4"}],
     dataBase: [{ key: 1, title: "hey ya", artist: "whitney", inputGenre: "Rock",inputRating: "3"},
-    {key: 2, title: "ms jackson", artist: "whitney", inputGenre: "R&B",inputRating: "4"}]
+    {key: 2, title: "ms jackson", artist: "whitney", inputGenre: "RnB",inputRating: "4"}]
   }
     
     this.handleChange = this.handleChange.bind(this)
@@ -60,25 +62,22 @@ deleteSong(id){
     this.setState({list: decreasedList, dataBase: decreasedList})
   }
 
-filterSong(){
+filterSong(e){
+  console.log(`this is ${e.value} dom`);
   const tempList3 = this.state.dataBase;
   const filteredArray = tempList3.filter((ele) => {
     if(
-      ele.title.includes(this.state.title)
-    ){
-      return true;
-    } else {return false}
+      ele.title.includes(this.state.title) &&
+      ele.artist.includes(this.state.artist) &&
+      ele.inputGenre.includes(this.state.inputGenre) &&
+      ele.inputRating.includes(this.state.inputRating)   
+    )
+    { return true } else {return false}
     
   })
   this.setState({
-    title: "",
-    artist: "",
-    inputGenre: "",
-    inputRating: "",
     list: filteredArray});
 }
-
-  
 
   render(){
       return (
@@ -89,7 +88,6 @@ filterSong(){
         </div>
       )
   }
-  
 }
 
 export default App;
