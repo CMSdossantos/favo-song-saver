@@ -2,14 +2,13 @@ body{
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: solid blue 1px;
+  background-color: rgb(134, 214, 251);
 }
 
 
 .containerflex {
   list-style-type: none;
   align-self: center;
-  border: solid yellow 1px;
   margin: 0;
   padding-left: 0;
   
@@ -17,11 +16,17 @@ body{
 
 .flexline {
   margin: 8px;
+  padding: 6px;
   font-size: 1rem;
   font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   font-weight: 600;
+  border: 2px solid white;
+  border-radius: 8px;
+  background-color: rgb(12, 191, 236);
 }
 
 span{
   float: right;
+  margin-left: 20px;
 }
+

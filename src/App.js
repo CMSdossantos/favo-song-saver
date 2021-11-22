@@ -12,10 +12,10 @@ class App extends Component {
     inputRating: "",
     filterGenre: "",
     filterRating: "",
-    list: [{ key: 1, title: "hey ya", artist: "whitney", inputGenre: "Rock",inputRating: "3"},
-    {key: 2, title: "ms jackson", artist: "whitney", inputGenre: "RnB",inputRating: "4"}],
-    dataBase: [{ key: 1, title: "hey ya", artist: "whitney", inputGenre: "Rock",inputRating: "3"},
-    {key: 2, title: "ms jackson", artist: "whitney", inputGenre: "RnB",inputRating: "4"}]
+    list: [{ key: 1, title: "love you", artist: "whitney", inputGenre: "Rock",inputRating: "3"},
+    {key: 2, title: "ms jackson", artist: "outcast", inputGenre: "RnB",inputRating: "4"}],
+    dataBase: [{ key: 1, title: "love you", artist: "whitney", inputGenre: "Rock",inputRating: "3"},
+    {key: 2, title: "ms jackson", artist: "outcast", inputGenre: "RnB",inputRating: "4"}]
   }
     
     this.handleChange = this.handleChange.bind(this)
@@ -63,7 +63,8 @@ deleteSong(id){
   }
 
 filterSong(e){
-  console.log(`this is ${e.value} dom`);
+  let firstTime = true;
+  if(firstTime){alert("all your inputs wil be considered into the filter"); firstTime = false}
   const tempList3 = this.state.dataBase;
   const filteredArray = tempList3.filter((ele) => {
     if(
